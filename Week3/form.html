@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Polls</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #2c3e50, #16a085);
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .navbar {
+      background-color: #34495e;
+      overflow: hidden;
+      font-size: 18px;
+    }
+
+    .navbar a {
+      color: white;
+      padding: 16px 30px;
+      text-decoration: none;
+      text-align: center;
+      float: left;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: #16a085;
+    }
+
+    .navbar .right {
+      float: right;
+    }
+
+    .main {
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    label {
+      font-size: 18px;
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    textarea, input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    input[type="submit"] {
+      background-color: #a01626;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #565e34;
+    }
+
+    #responseDisplay {
+      margin-top: 20px;
+    }
+
+    #pollChart {
+      margin-top: 20px;
+      width: 100%;
+      max-height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Polls</h1>
+  </div>
+
+  <div class="navbar">
+    <a href="graphs.html">Graphs</a>
+    <a href="polls.html">Polls</a>
+    <a href="resources.html">Resources</a>
+    <a href="website.html" class="right">Home</a>
+  </div>
+
+  <div class="main">
+    <h1>Polls</h1>
+    <p>Take part in our poll to share your opinion on homelessness.</p>
+    <form id="pollForm">
+      <label>What is your name?</label>
+      <textarea id="name" rows="1"></textarea>
+     
+      <label>Were you aware that the majority of students experience depressive thoughts?</label>
+      <input type="radio" name="awareness" value="yes"> Yes
+      <input type="radio" name="awareness" value="no"> No
+     
+      <label>How big of an issue do you think homelessnes is? (1-10)?</label>
+      <input type="number" id="issueRating" min="1" max="10">
+     
+      <label>Any additional comments?</label>
+      <textarea id="comments" rows="4"></textarea>
+     
+      <input type="submit" value="Submit">
+    </form>
+
+    <div id="responseDisplay" style="display: none;">
+      <h3>Your Responses:</h3>
+      <p><strong>Name:</strong> <span id="responseName"></span></p>
+      <p><strong>Aware of Depressive Thoughts?</strong> <span id="responseAwareness"></span></p>
+      <p><strong>Issue Rating (1-10):</strong> <span id="responseRating"></span></p>
+      <p><strong>Additional Comments:</strong> <span id="responseComments"></span></p>
+    </div>
+
+    <canvas id="pollChart"></canvas>
+  </div>
+
+  <script>
+    const form = document.getElementById('pollForm');
+    const responseDisplay = document.getElementById('responseDisplay');
+    const pollChartCanvas = document.getElementById('pollChart');
+    let pollChart;
+
+    let pollData = {
+      labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+      datasets: [{
+        label: "Number of Responses",
+        data: Array(10).fill(0),
+        backgroundColor: "rgba(122, 16, 13, 0.5)",
+        borderColor: "#662299",
+        borderWidth: 20
+      }]
+    };
+
+    function updateChart(rating) {
+      if (rating >= 1 && rating <= 10) {
+        pollData.datasets[0].data[rating - 1]++;
+      }
+      pollChart.update();
+    }
+
+    function createChart() {
+      pollChart = new Chart(pollChartCanvas, {
+        type: "bar",
+        data: pollData,
+        options: {
+          responsive: true,
+          plugins: {
+            tooltip: {
+              enabled: true,
+              callbacks: {
+                label: function(tooltipItem) {
+                  return `Responses: ${tooltipItem.raw}`;
+                }
+              }
+            }
+          },
+          scales: {
+            y: { beginAtZero: true }
+          }
+        }
+      });
+    }
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const awareness = document.querySelector('input[name="awareness"]:checked')?.value;
+      const issueRating = parseInt(document.getElementById("issueRating").value);
+      const comments = document.getElementById("comments").value;
+
+      document.getElementById("responseName").textContent = name || "No name provided";
+      document.getElementById("responseAwareness").textContent = awareness || "No answer selected";
+      document.getElementById("responseRating").textContent = issueRating || "No rating provided";
+      document.getElementById("responseComments").textContent = comments || "No comments provided";
+
+      responseDisplay.style.display = "block";
+
+      if (!pollChart) {
+        createChart();
+      }
+      updateChart(issueRating);
+    });
+  </script>
+</body>
+</html>
+
