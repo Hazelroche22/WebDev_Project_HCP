@@ -88,38 +88,20 @@ body > * {
   float: left;*/
   position: absolute;
   /*we position the element as absolute so it can freely move across the screen*/
-  animation: moveRight 3s linear infinite;
+  animation: moveLeft 3s linear infinite;
 }
   
-@keyframes moveRight {
+@keyframes moveLeft {
   0% {
     /*the left property will position the element considering the left edge*/
-    left: 0;
+    right: 0;
   }
   100% {
     /*the following function is used to push the element back to the start*/
-    left: 100%;
+    right: 100%;
   }
 }
-/*
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-    transform-origin: 15% 15%;
-  }
-  100% {
-    transform: rotate(360deg);
-    transform-origin: 15% 15%;
-  }
-}*/
 
-/*.rotating-image {
-  animation-name: spin;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-*/
 /* Footer */
 .footer {
   padding: 20px;
