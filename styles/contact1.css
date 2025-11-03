@@ -5,7 +5,7 @@
 }
 
 
-/* Style the body */
+/* Style of the body */
 body {
     font-family: "Lexend", sans-serif;
     margin: 0;
@@ -18,13 +18,16 @@ body {
 }
 body > * {
     width: 100%;
-}.header {
+}
+
+/*style of the header*/
+.header {
     text-align: center;
     color: white;
     height: fit-content;
 }
 
-/* Increase the font size of the heading */
+/* Font size of the heading */
 .header h1 {
     font-size: 40px;
     color: black;
@@ -36,14 +39,14 @@ body > * {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
-/* Style the top navigation bar */
+/* Style of the top navigation bar */
 .navbar {
     overflow: hidden;
     background-color: #bb4646;
     text-align: center;
 }
 
-/* Style the navigation bar links */
+/* Style of the navigation bar links */
 .navbar a {
     float: left;
     display: block;
@@ -58,30 +61,30 @@ body > * {
     float: right;
 }
 
-/* Change color on hover */
+/* Change the colour on hover */
 .navbar a:hover {
     background-color: #ddd;
     color: black;
 }
 
+/* Style of the paragraphs*/
 .p{
     align-items: center;
 }
 
+/*Style of the logo*/
 .logo_icon {
   background-color:none;
   width: 100px;
   height: 100px;
-  /*padding: 20px;
-  float: left;*/
   position: absolute;
-  /*we position the element as absolute so it can freely move across the screen*/
+  /*element as absolute so it can freely move across the screen*/
   animation: moveLeft 3s linear infinite;
 }
   
 @keyframes moveLeft {
   0% {
-    /*the left property will position the element considering the left edge*/
+    /*the right property will position the element considering the right edge*/
     right: 0;
   }
   100% {
@@ -90,6 +93,7 @@ body > * {
   }
 }
 
+/*Style of the form */
 .form
 {
     display:flex;
@@ -98,6 +102,8 @@ body > * {
     width: 100%;
     padding: 12px;
 }
+
+/*Style of the footer*/
 .footer {
     padding: 20px;
     text-align: center;
@@ -105,12 +111,6 @@ body > * {
     float: center;
 }
 
-@media screen and (max-width: 700px) {
-    .row {   
-      flex-direction: column;
-    }
-}
-  
   /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 400px) {
     .navbar a {

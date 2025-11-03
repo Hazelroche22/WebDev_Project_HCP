@@ -6,7 +6,7 @@
 }
 
 
-/* Style the body */
+/* Style of the body */
 body {
     font-family: "Lexend", sans-serif;
     margin: 0;
@@ -21,7 +21,7 @@ body > * {
     width: 100%;
 }
 
-/* Header/logo Title */
+/* Style of the header */
 .header {
     text-align: center;
     align-items: center;
@@ -29,7 +29,7 @@ body > * {
     height: fit-content;
 }
 
-/* Increase the font size of the heading */
+/* Font size of the heading */
 .header h1 {
     font-size: 40px;
     color: black;
@@ -42,14 +42,14 @@ body > * {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
-/* Style the top navigation bar */
+/* Style of the top navigation bar */
 .navbar {
     overflow: hidden;
     background-color: #bb4646;
     text-align: center;
 }
 
-/* Style the navigation bar links */
+/* Style of the navigation bar links */
 .navbar a {
     float: left;
     display: block;
@@ -72,28 +72,26 @@ body > * {
 
 /* Main column */
 .main {   
-  -ms-flex: 70%; /* IE10 */
+  -ms-flex: 70%;
   flex: 70%;
   background-color: white;
   text-align: center;
   padding-inline: 15%;
 }
 
-/* logo at top of page */
+/* Style for logo at top of page */
 .logo_icon {
   background-color:none;
   width: 100px;
   height: 100px;
-  /*padding: 20px;
-  float: left;*/
   position: absolute;
-  /*we position the element as absolute so it can freely move across the screen*/
-  animation: moveLeft 3s linear infinite;
+  /*element as absolute so it can freely move across the screen*/
+  animation: moveRight 3s linear infinite;
 }
   
-@keyframes moveLeft {
+@keyframes moveRight {
   0% {
-    /*the left property will position the element considering the left edge*/
+    /*the right property will position the element considering the right edge*/
     right: 0;
   }
   100% {
@@ -110,7 +108,7 @@ body > * {
   float: center;
 }
 
-/* Create two equal columns that floats next to each other */
+/* Create two columns that floats next to each other */
 .left_column {
   float: left;
   width: 75%;
@@ -129,12 +127,6 @@ ol {
   text-align: center;
 }
 
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-  .row {   
-    flex-direction: column;
-  }
-}
 
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 400px) {
