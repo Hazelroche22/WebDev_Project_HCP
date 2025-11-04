@@ -101,11 +101,21 @@ body > * {
 }
 
 /* Footer */
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-  float: center;
+footer{
+    width: 100%;
+    background-color: #d3d3d3;
+    color: black;
+    display: flex;
+    align-items:  center;
+    flex-direction: column;
+    text-decoration: none;
+}
+footer .footer-socials{
+    display: flex;
+    gap: 20px;
+}
+footer a{
+    color: transparent;
 }
 
 /* Create two columns that floats next to each other */
