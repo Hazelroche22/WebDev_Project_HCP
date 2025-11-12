@@ -107,6 +107,16 @@ h1 {
     color: black;
 }
 
+/* Style for logo at top of page */
+.logo_icon {
+  background-color:none;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  /*element as absolute so it can freely move across the screen*/
+  animation: moveRight 3s linear infinite;
+}
+
     /* hides all slides by default (only one is shown at a time) */
     * {box-sizing: border-box}
 .mySlides1, .mySlides2, .mySlides3, .mySlides4, .mySlides5, .mySlides6 {display: none}
