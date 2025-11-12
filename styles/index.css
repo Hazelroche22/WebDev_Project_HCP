@@ -34,22 +34,29 @@ header nav{
     align-items: center;
     flex-direction: row;
     background-color: rgb(179, 63, 63);
+    height: 51.5px;
 }
 header nav a{
-    border-left: 1px solid black;
     padding: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    background-color: rgb(179, 63, 63);
     transition: 0.2s;
     color: white;
+}
+.line{
+    height: 100%;  
+    width: 1px;
+    background-color: black;
 }
 header nav a:hover{
     border: none;
     background-color: rgb(234, 139, 118);
     color: black;
     scale: 1.1;
+    z-index: 2;
 }
 header nav ul li:has(> a:hover) {
     background-color: gray;
