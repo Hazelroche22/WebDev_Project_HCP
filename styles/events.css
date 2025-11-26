@@ -140,15 +140,14 @@ ol {
   float: left;
   width: 25%;
   padding: 10px;
-  text-align: center;
-  border-style: solid;
-  border-color: black;
-  border-width: 5px;
-  border-radius: 10px;
-  background-color: lightgrey;
   margin-right: 2%;
   margin-left: 0%;
   margin-top: 3%;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+
 }
 
 
