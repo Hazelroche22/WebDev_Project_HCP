@@ -1,48 +1,131 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #fdfdfd;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #fdfdfd;
     }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
+.header h1 {
+  font-size: 40px;
+  color: black;
+  text-align: center;
+}
 
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
+.header h4 {
+  color: black;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
 
-    .item-image {
-      text-align: center;
-      margin-bottom: 20px;
-    }
+/* Style of the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #bb4646;
+  text-align: center;
+}
 
-    .item-image img {
-      max-width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
+/* Style of the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
 
-    .description {
-      font-size: 1.1em;
-      line-height: 1.6;
-    }
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
 
-    .back-link {
-      display: inline-block;
-      margin-top: 30px;
-      text-decoration: none;
-      background-color: #333;
-      color: white;
-      padding: 10px 16px;
-      border-radius: 4px;
-    }
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
 
-    .back-link:hover {
-      background-color: #555;
-    }
+/* Style for logo at top of page */
+.logo_icon {
+  background-color: none;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  /*element as absolute so it can freely move across the screen*/
+  animation: moveRight 3s linear infinite;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  }
+
+.item-image {
+  text-align: center;
+   margin-bottom: 20px;
+}
+
+.item-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.description {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 30px;
+  text-decoration: none;
+  background-color: #333;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 4px;
+}
+
+.back-link:hover {
+  background-color: #555;
+}
+
+footer {
+  width: 100%;
+  background-color: #d3d3d3;
+  color: black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-decoration: none;
+  gap: 20px
+}
+
+footer .footer-socials {
+  display: flex;
+  gap: 20px;
+}
+
+footer a {
+  color: transparent;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
