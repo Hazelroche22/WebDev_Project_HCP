@@ -30,18 +30,36 @@
   <p>
     If you have any Questions for Wheels on Fire, Please enter your queries here:
   </p>
-  <div class="form">
-    <ol>
-      <h4>Additional Queries</h4>
-    </ol>
-    <ol><label for="frame">First name:</label></ol>
-    <ol><input type="text" id="fname" name="fname"><br><br></ol>
-    <ol><label for="lname">last name:</label></ol>
-    <ol><input type="text" id="lname" name="lname"><br><br></ol>
-    <ol><label for="box">Add in your Query:</label></ol>
-    <ol><input for="textarea" id="box" name="box"><br><br></ol>
+  <form class="form" action="verifyForm()">
+    <h4>Additional Queries</h4>
+    <ul>
+      <li>
+        <label for="frame">First name:</label>
+        <input type="text" id="fname" name="fname" required>
+      </li>
+      <li>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname" required>
+      </li>
+      <li>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </li>
+      <li>
+        <label for="reason">Reason for Inquiry:</label>
+        <select name="reason" id="reason" required>
+          <option value="general">General</option>
+          <option value="feedback">Feedback</option>
+          <option value="techsupport">Technical support</option>
+        </select>
+      </li>
+      <li class="textArea">
+        <label for="box">Message:</label>
+        <textarea id="box" name="box" rows="5" placeholder="Enter your message..." required></textarea>
+      </li>
+    </ul>
     <button type="submit" value="Submit">Submit</button>
-  </div>
+  </form>
 
 
 
