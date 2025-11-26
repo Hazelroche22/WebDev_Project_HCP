@@ -2,76 +2,78 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 
 /* Style of the body */
 body {
-    font-family: "Lexend", sans-serif;
-    margin: 0;
-    color: black;
-    max-width: 100vw;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  font-family: "Lexend", sans-serif;
+  margin: 0;
+  color: black;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
-body > * {
-    width: 100%;
+
+body>* {
+  width: 100%;
 }
 
 /* Style of the header */
 .header {
-    text-align: center;
-    align-items: center;
-    color: white;
-    height: fit-content;
+  text-align: center;
+  align-items: center;
+  color: white;
+  height: fit-content;
 }
 
 /* Font size of the heading */
 .header h1 {
-    font-size: 40px;
-    color: black;
-    text-align: center;
+  font-size: 40px;
+  color: black;
+  text-align: center;
 }
 
 .header h4 {
-    color: black;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
+  color: black;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
 }
+
 /* Style of the top navigation bar */
 .navbar {
-    overflow: hidden;
-    background-color: #bb4646;
-    text-align: center;
+  overflow: hidden;
+  background-color: #bb4646;
+  text-align: center;
 }
 
 /* Style of the navigation bar links */
 .navbar a {
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
 }
 
 /* Right-aligned link */
 .navbar a.right {
-    float: right;
+  float: right;
 }
 
 /* Change color on hover */
 .navbar a:hover {
-    background-color: #ddd;
-    color: black;
+  background-color: #ddd;
+  color: black;
 }
 
 /* Main column */
-.main {   
+.main {
   -ms-flex: 70%;
   flex: 70%;
   background-color: white;
@@ -81,19 +83,20 @@ body > * {
 
 /* Style for logo at top of page */
 .logo_icon {
-  background-color:none;
+  background-color: none;
   width: 100px;
   height: 100px;
   position: absolute;
   /*element as absolute so it can freely move across the screen*/
   animation: moveRight 3s linear infinite;
 }
-  
+
 @keyframes moveRight {
   0% {
     /*the right property will position the element considering the right edge*/
     right: 0;
   }
+
   100% {
     /*the following function is used to push the element back to the start*/
     right: 100%;
@@ -101,21 +104,23 @@ body > * {
 }
 
 /* Footer */
-footer{
-    width: 100%;
-    background-color: #d3d3d3;
-    color: black;
-    display: flex;
-    align-items:  center;
-    flex-direction: column;
-    text-decoration: none;
+footer {
+  width: 100%;
+  background-color: #d3d3d3;
+  color: black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-decoration: none;
 }
-footer .footer-socials{
-    display: flex;
-    gap: 20px;
+
+footer .footer-socials {
+  display: flex;
+  gap: 20px;
 }
-footer a{
-    color: transparent;
+
+footer a {
+  color: transparent;
 }
 
 /* Create two columns that floats next to each other */
@@ -129,11 +134,12 @@ footer a{
   text-align: center;
   border-radius: 10px;
   background-color: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
+
 ol {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .right_column {
@@ -142,14 +148,14 @@ ol {
   padding: 10px;
   text-align: center;
   background-color: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   margin-right: 2%;
   margin-left: 0%;
   margin-top: 3%;
   text-align: center;
   background-color: white;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 
 }
 
