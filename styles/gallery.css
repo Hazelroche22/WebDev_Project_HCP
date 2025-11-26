@@ -117,6 +117,18 @@ h1 {
   animation: moveRight 3s linear infinite;
 }
 
+@keyframes moveRight {
+  0% {
+    /*the right property will position the element considering the right edge*/
+    right: 0;
+  }
+
+  100% {
+    /*the following function is used to push the element back to the start*/
+    right: 100%;
+  }
+}
+
     /* hides all slides by default (only one is shown at a time) */
     * {box-sizing: border-box}
 .mySlides1, .mySlides2, .mySlides3, .mySlides4, .mySlides5, .mySlides6 {display: none}
