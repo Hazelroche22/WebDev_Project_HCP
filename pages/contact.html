@@ -104,7 +104,7 @@
       event.preventDefault(); 
       const form = document.getElementById("form");
 
-      if(checkField){
+      if(checkField()){
         form.innerHTML = '';
         
         let msg = document.createElement("p")
