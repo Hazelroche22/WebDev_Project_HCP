@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="../styles/items_test.css">
+  <link rel="stylesheet" href="../styles/items.css">
   <title>Porsche 911 GT3</title>
 </head>
 
@@ -28,11 +28,11 @@
 
     <div class="item-image">
       <div class="slideshow-container">
-        <div class="mySlides1">
+        <div class="mySlides">
           <img src="../assets/porsche_GT3.JPEG" alt="Image of white Porsche 911 GT3 sideways" style="width:100%" height="327px">
         </div>
 
-        <div class="mySlides1">
+        <div class="mySlides">
           <img src="../assets/porsche_back2.JPEG" alt="Image of white Porsche 911 GT3 backwards" style="width:100%" height="327px">
         </div>
 
@@ -77,14 +77,10 @@
   </footer>
 
 <script>
-    let slideIndex = [1,1,1,1,1,1]; //keeps track of current slide index for each slideshow [0] for slideshow 1, [1] for 2
-    let slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4", "mySlides5", "mySlides6"] //Stores the class names used to select slides from the DOM.
+    let slideIndex = [1]; //keeps track of current slide index for each slideshow [0] for slideshow 1, [1] for 2
+    let slideId = ["mySlides"] //Stores the class names used to select slides from the DOM.
     showSlides(1, 0); // shows the first slides in slideshow when page loads
-    showSlides(1, 1);
-    showSlides(1, 2);
-    showSlides(1, 3);
-    showSlides(1, 4);
-    showSlides(1, 5);
+
 
     function plusSlides(n, no) { //calls showSlides() to update the display
       showSlides(slideIndex[no] += n, no); //when next is clicked, increments index of plusSlides by 1 n updates visible slide

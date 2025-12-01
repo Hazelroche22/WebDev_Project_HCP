@@ -79,7 +79,7 @@ h1 {
 
 .item-image {
   text-align: center;
-   margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .item-image img {
@@ -125,6 +125,70 @@ footer .footer-socials {
 
 footer a {
   color: transparent;
+}
+
+@keyframes moveRight {
+  0% {
+    /*the right property will position the element considering the right edge*/
+    right: 0;
+  }
+
+  100% {
+    /*the following function is used to push the element back to the start*/
+    right: 100%;
+  }
+}
+
+/* hides all slides by default (only one is shown at a time) */
+* {
+  box-sizing: border-box
+}
+
+.mySlides {
+  display: none
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* slideshow container; centers slideshow n limits its width */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  height: 70%;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.prev {
+  left: 0
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: #f1f1f1;
+  color: black;
 }
 
 @media (max-width: 768px) {
